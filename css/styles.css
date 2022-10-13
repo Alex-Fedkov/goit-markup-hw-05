@@ -53,6 +53,8 @@ body {
   --color-background-hero: #c4c4c4;
   /*соц. сети фон*/
   --color-fill: #afb1b8;
+  /* распределение времени */
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -152,7 +154,7 @@ header .studio {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 /*почта + телефон*/
@@ -166,7 +168,7 @@ header .studio {
 
   transition-property: color, fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .mail-and-tel svg {
@@ -210,7 +212,7 @@ header .studio {
 
   transition-property: opacity;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .nav-link:hover::after {
@@ -301,7 +303,7 @@ h3 {
 
   transition-property: background, color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .hero-but:hover,
@@ -332,7 +334,8 @@ img {
 
 .skill-list {
   display: flex;
-  flex-wrap: nowrap;
+  /* flex-wrap: nowrap; */
+  gap: 30px;
 }
 
 .skill-list div {
@@ -344,14 +347,17 @@ img {
   right: 0;
   bottom: 0;
   width: 100%;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 27px;
+  padding-bottom: 27px; */
   margin-bottom: 0;
 
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
@@ -371,16 +377,14 @@ p {
 .skills-work {
   display: inline-block;
   width: 270px;
-  margin-left: 30px;
 }
 
 .skills-team {
   display: inline-block;
   width: 270px;
-  margin-left: 30px;
-  margin-bottom: 16px;
 
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .work {
@@ -444,7 +448,7 @@ p {
 
   transition-property: background-color, color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .social-link svg {
@@ -486,7 +490,7 @@ p {
 
   transition-property: border-color, fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .our-clients-list a:hover,
@@ -528,7 +532,7 @@ footer {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .footer-link {
@@ -541,7 +545,7 @@ footer {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .studio-footer {
@@ -582,7 +586,7 @@ footer {
 
   transition-property: background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .fotter-social b {
@@ -615,13 +619,18 @@ footer {
   height: 100%;
 
   background: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+
+  transition: opacity 250ms var(--transition-timing);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotateY(360deg);
+  transition: transform 250ms var(--transition-timing);
 
   min-height: 581px;
   min-width: 528px;
@@ -629,13 +638,15 @@ footer {
   background-color: var(--color-background-cart);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-
-  overflow: 1;
 }
 
 .backdrop.is-hidden {
   pointer-events: none;
   opacity: 0;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) rotateY(180deg);
 }
 
 .btn-close {

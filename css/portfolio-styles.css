@@ -53,6 +53,8 @@ body {
   --color-border: #eeeeee;
   /* фон выезжающей рамки */
   --color-background-hover: rgba(33, 150, 243, 0.9);
+  /* распределение времени */
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list {
@@ -134,7 +136,7 @@ header .studio {
 
   transition-property: opacity;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .nav-link:hover::after {
@@ -195,7 +197,7 @@ header .studio {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 /*почта + телефон*/
@@ -209,7 +211,7 @@ header .studio {
 
   transition-property: color, fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .mail-and-tel svg {
@@ -273,7 +275,7 @@ h2 {
 
   transition-property: background, color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .button-filtr:hover,
@@ -287,8 +289,9 @@ h2 {
 /* карточки */
 .skill-list {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 img {
@@ -300,7 +303,6 @@ img {
 .skills-item {
   display: inline-block;
   width: 370px;
-  margin-bottom: 30px;
 }
 
 /*проект текст*/
@@ -315,7 +317,7 @@ p {
 
   transition-property: box-shadow;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .skills-item a:hover,
@@ -371,7 +373,7 @@ p {
 
   transition-property: transform;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .skills-item a:hover .hover-text,
@@ -410,7 +412,7 @@ footer {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .footer-link {
@@ -423,7 +425,7 @@ footer {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .studio-footer {
@@ -464,7 +466,7 @@ footer {
 
   transition-property: background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--transition-timing);
 }
 
 .fotter-social b {
